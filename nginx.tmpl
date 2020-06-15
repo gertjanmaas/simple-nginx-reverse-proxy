@@ -44,7 +44,7 @@ http {
             proxy_set_header Connection "Upgrade";
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
-            proxy_pass http://reverse_proxy;
+            proxy_pass reverse_proxy;
             access_log /var/log/nginx/access.log upstreamlog;
         }
     }

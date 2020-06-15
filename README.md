@@ -10,5 +10,5 @@ Multiple targets can be given by seperating them with a semicolon.
 ## Example
 
 ```
-docker run -p 8080:80 -e "TARGET_URIS=google.nl;google.com" gmaas/simple-reverse-proxy
+docker run -p 8080:80 -e "TARGET_URIS=https://google.nl;https://google.com" gmaas/simple-reverse-proxy
 ```
