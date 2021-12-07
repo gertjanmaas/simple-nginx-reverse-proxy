@@ -1,0 +1,22 @@
+name: Build container
+
+on:
+  push:
+    branches:
+    tags:
+
+jobs:
+  push_container:
+    name: Build and push docker container
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        run: docker login docker.io -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_TOKEN }}
+      - name: Docker build and push artifactory
+        id: docker-push
+        uses: philips-labs/docker-action@master
+        with:
+          imageName: gmaas/simple-reverse-proxy
+          dockerRegistry: docker.io
+          dockerFile: docker/Dockerfile
