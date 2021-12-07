@@ -8,7 +8,7 @@ on:
 jobs:
   push_container:
     name: Build and push docker container
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Docker login
