@@ -19,4 +19,4 @@ jobs:
         with:
           imageName: gmaas/simple-reverse-proxy
           dockerRegistry: docker.io
-          dockerFile: docker/Dockerfile
+          dockerFile: Dockerfile
